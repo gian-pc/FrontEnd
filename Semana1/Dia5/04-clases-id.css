@@ -1,0 +1,34 @@
+section{
+    background: blue;
+}
+
+
+/* Todos los elementos input que esten  dentro 
+de un elemento que tenga clase. formulario-personal */
+.formulario-personal input{
+border-radius: 10px;
+}
+
+.formulario-externo{
+background: cyan;
+}
+
+section{
+    background: orange;
+}
+
+.letra-roja{
+    color:red;
+}
+
+.subrayado{
+    text-decoration: underline;
+}
+
+#inputgoogle{
+    background: gray !important; 
+}
+
+#inputgoogle{
+    background:green;
+}

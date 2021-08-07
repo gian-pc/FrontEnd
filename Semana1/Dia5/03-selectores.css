@@ -1,0 +1,23 @@
+label{
+    color: teal;
+}
+
+/* Estilo que afecta a todos los h1 y los h2 */
+h2,h1{
+    color: purple;
+}
+
+/* Selector de Hijos a cualquier nivel */
+/* Todos los hijos o nietos o bisnietos */
+/* Que sean li y esten dentro de un ul */
+
+ul li{
+    color: red;
+}
+
+/* Selector ce Hijos en primer nivel */
+/* o Selector de Hijos directos */
+
+ol>li, input{
+    color: blue;
+}

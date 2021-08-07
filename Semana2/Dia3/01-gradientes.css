@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html,body{
+    height: 100%;
+}
+body{
+
+    background: -webkit-linear-gradient(top,#000428,#004e92);
+}
+
+.section1 {
+    height: 200px;
+    width: 200px;
+    border: 1px solid orangered;
+    background: -webkit-linear-gradient(top, #E60902,#D90DC4,#7602E6);
+}
+
+.section2 {
+    height: 200px;
+    width: 200px;
+    background: -webkit-radial-gradient(center,circle,#39ad5b,#c0fddf);
+
+}
