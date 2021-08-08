@@ -6,7 +6,6 @@
 /**
  * document.getElementById("id_del_elemento"); => obtiene en una variable
  * la referencia a un elemento del DOM
- *
  */
 
 let header = document.getElementById("header");
