@@ -20,17 +20,18 @@ const llenarDepartamentosByIdPais = (idPaisSeleccionado) => {
   depasTemporales.forEach((objDepa) => {
     options += `<option value="${objDepa.id}">${objDepa.nombre}</option>`;
   });
-  selectDepartamento.innerHTML=options;
+  selectDepartamento.innerHTML = options;
   selectDepartamento.removeAttribute("disabled");
 };
 
 /**
  * elemento.onchange evento que se ejecuta cada vez que el valor de un elemento
- * cambia (en el caso del select, cada vez que un nuevo option es seleciconado)
+ * cambia (en el caso del select, cada vez que un nuevo option es seleccionado)
  * @param {*} e
  */
 selectPais.onchange = (e) => {
   console.log(e);
   let idPaisSeleccionado = selectPais.value;
+
   llenarDepartamentosByIdPais(idPaisSeleccionado);
 };
