@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Persona from "./Persona";
 
 const Personas = () => {
@@ -11,7 +11,9 @@ const Personas = () => {
     setPersonas(json.data);
   };
 
-  getPersonas();
+  useEffect(() => {
+    getPersonas();
+  },[]);
 
   return (
     <div className="col-md-8">
