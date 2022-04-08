@@ -3,7 +3,15 @@
  * Funcion que retorna el número de casos de personas
  * infectadas en el mundo
  */
-const getTotalDeCasosEnElMundo = () => {};
+const getTotalDeCasosEnElMundo = () => {
+  let totalInfectados = 0;
+  for (let i = 0; i < covid.length; i++) {
+    totalInfectados = totalInfectados + covid[i].cases;
+  }
+  return totalInfectados;
+};
+let total = getTotalDeCasosEnElMundo();
+// console.log(`Total de infectados en el Mundo ${total}`);
 
 // 2
 /**
@@ -12,7 +20,16 @@ const getTotalDeCasosEnElMundo = () => {};
  * RETORNAR NULL
  * @param {*} pais
  */
-const getCifrasByNamePais = (pais) => {};
+const getCifrasByNamePais = (pais) => {
+  for (let i = 0; i < covid.length; i++) {
+    if (covid[i].country === pais) {
+      return covid[i];
+    }
+  }
+  return null;
+};
+let pais = getCifrasByNamePais("Indiah");
+// console.log(pais);
 
 // 3
 /**
@@ -22,9 +39,23 @@ const getCifrasByNamePais = (pais) => {};
  * Para ello se debe proporcionar  el nombre del pais.
  * Para buscar un país, se debe hacer uso de la función del
  * ejercicio 2 (OBLIGATORIO)
- * @param {*} pais s
+ * @param {*} pais
  */
-const getPorcentajeDeRecuperadosByNamePais = (pais) => {};
+const getPorcentajeDeRecuperadosByNamePais = (pais) => {
+  for (let i = 0; i < covid.length; i++) {
+    if (covid[i].country === pais) {
+      console.log(`País: ${covid[i].country}`);
+      let recovered = (covid[i].recovered / covid[i].cases) * 100;
+      return recovered;
+    }
+    return null;
+  }
+};
+// let recuperados = getPorcentajeDeRecuperadosByNamePais("USA");
+// console.log(recuperados);
+// console.log(`Recuperados ${recuperados.toFixed(1)} %`);
+
+
 
 // 4
 /**
@@ -39,6 +70,4 @@ const getPorcentajeDeRecuperadosByNamePais = (pais) => {};
  * implica que cada país debe mostrar el porcentaje de casos positivos
  * frente al total de pruebas realizadas
  */
-const generarArrayPorcentajeDePruebasPositivas=()=>{
-
-}
+const generarArrayPorcentajeDePruebasPositivas = () => {};

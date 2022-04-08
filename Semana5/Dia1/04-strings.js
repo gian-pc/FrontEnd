@@ -15,7 +15,7 @@ console.log(minuscula);
  * retorna una copia de la cadena de texto, convertida en mayúscula
  */
 
-let mayuscula=frase.toUpperCase();
+let mayuscula = frase.toUpperCase();
 console.log(mayuscula);
 
 /**
@@ -24,7 +24,7 @@ console.log(mayuscula);
  * a partir de dicha posición inicial.
  */
 
-let subcadena = frase.substr(2,10);
+let subcadena = frase.substr(2, 10);
 console.log(subcadena);
 
 /**
@@ -33,7 +33,7 @@ console.log(subcadena);
  * ATENTION: la última posicion no es considerada dentro de la subcadena de respuesta
  */
 
-let subcadenaInicioFin=frase.substring(8,12);
+let subcadenaInicioFin = frase.substring(8, 12);
 console.log(subcadenaInicioFin);
 
 /**
@@ -42,7 +42,7 @@ console.log(subcadenaInicioFin);
  * Retorna false si no existe
  */
 
-let existeBEBER=frase.includes("BEBER");
+let existeBEBER = frase.includes("BEBER");
 console.log(`¿BEBER está incluída?: ${existeBEBER}`);
 
 /**
@@ -51,7 +51,7 @@ console.log(`¿BEBER está incluída?: ${existeBEBER}`);
  * Si la "subcadena" no existe se retorna -1
  */
 
-let posicionPalabraCadena=frase.indexOf("cadena");
+let posicionPalabraCadena = frase.indexOf("cadena");
 console.log(posicionPalabraCadena);
 
 /**
@@ -61,6 +61,6 @@ console.log(posicionPalabraCadena);
  * si la cadena tiene espacios intermedios, no los borra
  */
 
-let fraseConEspacios="   ups!    "
+let fraseConEspacios = "   ups!    ";
 console.log(fraseConEspacios);
 console.log(fraseConEspacios.trim());

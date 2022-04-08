@@ -29,8 +29,8 @@ let seccionesArreglo = Array.from(secciones);
 console.log(seccionesArreglo);
 
 console.log("-------- Iterando -------");
-seccionesArreglo.forEach((seccion) => {
-  console.log(seccion);
+seccionesArreglo.forEach((seccion, i) => {
+  console.log(i, seccion);
 });
 
 /**

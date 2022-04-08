@@ -6,15 +6,21 @@
 // || = o
 // ! = NOT
 
-debugger;
+
 
 let edad = +prompt("Ingrse su edad");
-let imc = 0;
-imc = peso / (altura * altura);
+let peso = +prompt("¿Cuanto pesa joven (Kgs.)?");
+let altura = +prompt("¿Cuanto mide joven (Kgs.)?");
+let indiceMasaCorporal = 0;
 
-if (edad > 17 && imc <= 30) {
-  console.log("Si hay pase Laboral");
-} else {
-  console.log("No hay pase Laboral");
+indiceMasaCorporal = peso / (altura*altura);
+
+
+if (edad > 17 && indiceMasaCorporal <=30) {
+  console.log(`Si hay pase laboral`);
+}else{
+  console.log(`No hay pase laboral`);
+  console.log(`Es menor de edad O  su IMC es > 30`);
 }
-console.log(`IMC: ${imc}`);
+console.log(`Su IMC = ${indiceMasaCorporal}`);
+console.log(`Su edad = ${edad}`);

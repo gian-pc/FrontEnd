@@ -25,6 +25,7 @@ const llenarSelect = () => {
   let contenido = "";
   peliculas.forEach((objPelicula) => {
     contenido += `<option value="${objPelicula.id}">${objPelicula.title}</option>`;
+    
   });
   selectPeliculas.innerHTML = contenido;
 };

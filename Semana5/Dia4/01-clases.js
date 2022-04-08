@@ -18,6 +18,8 @@ class Restaurant {
    */
   tipificacion;
 
+  //  Constructor: Es la función que se ejecuta automaticamente cuando se crea un objeto
+
   constructor(
     _aforo = 0,
     _nroMesas = 0,

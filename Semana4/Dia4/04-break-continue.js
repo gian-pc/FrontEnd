@@ -5,7 +5,6 @@ let buscar = prompt("Ingrese nombre a buscar:");
 let encontrado = false;
 
 for (let i = 0; i < nombres.length; i++) {
-  console.log(`i=${i}`);
   if (nombres[i] === buscar) {
     console.log(`Encontrado ${buscar}`);
     console.log(`Edad: ${edades[i]}`);
@@ -15,7 +14,7 @@ for (let i = 0; i < nombres.length; i++) {
 }
 
 if (!encontrado) {
-  console.log("No se ha encontrado al usuario");
+  console.log(`No se a encontrado al usuario: ${buscar}`);
 }
 
 // Uso del continue

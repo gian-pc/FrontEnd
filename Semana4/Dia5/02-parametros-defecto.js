@@ -10,7 +10,7 @@ function trinomioCuadrado(a, b, c) {
   }
 }
 
-let resultado = trinomioCuadrado(2, 3,5);
+let resultado = trinomioCuadrado(2, 3, 5);
 console.log(resultado);
 
 /**
@@ -21,7 +21,7 @@ console.log(resultado);
  * @param {string} busqueda
  * @return {boolean}
  */
-function buscarNombre(nombres=[], busqueda="") {
+function buscarNombre(nombres = [], busqueda = "") {
   for (let i = 0; i < nombres.length; i++) {
     if (nombres[i] === busqueda) {
       // La sentencia return finaliza la función, una vez encontrado el valor.
@@ -34,7 +34,6 @@ function buscarNombre(nombres=[], busqueda="") {
 let nombres = ["martin", "jaime", "anita", "paola", "daniel"];
 let resultadoBusqueda = buscarNombre();
 console.log(resultadoBusqueda);
-
 
 // Función isNaN (NaN = Not at Number)
 // Devuelve True: Si el valor que tiene dentro NO es un número.

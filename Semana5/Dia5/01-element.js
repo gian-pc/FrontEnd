@@ -1,13 +1,13 @@
 let body = document.querySelector("body");
 
 // Colocando estilos desde JavaScript
-body.style.backgroundColor = "#444444";
+body.style.backgroundColor = "#444";
 
 // elemento.classList
 /**
- * Atributo que permite trabajar con las clasesa de un elemento
+ * Atributo que permite trabajar con las clases de un elemento
  * como añadir clase, listar las clases que el elemento tiene
- * quitae una clase y hasta agregar/quitar clase como un interruptor
+ * quitar una clase y hasta agregar/quitar clase como un interruptor
  */
 let header = document.querySelector("header");
 console.log(header.classList);

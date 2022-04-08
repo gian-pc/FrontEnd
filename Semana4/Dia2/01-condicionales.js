@@ -2,9 +2,9 @@
 
 // !== diferente
 // === igual
-debugger;
 
-let edad = +prompt("Ingrse su edad");
+
+let edad = +prompt("Ingrese su edad");
 let imc = 0;
 
 if (edad > 17) {
@@ -21,4 +21,5 @@ if (edad > 17) {
   }
 } else {
   console.log("No hay pase Laboral");
+  console.log(`Edad: ${edad}, es menor de edad`);
 }

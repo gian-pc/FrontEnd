@@ -1,32 +1,32 @@
-let btnLight = document.getElementById("btnLight");
-let btnDarks = document.getElementById("btnDarks");
+let btnYellow = document.getElementById("btnYellow");
+let btnRed = document.getElementById("btnRed");
 let btnToggle = document.getElementById("btnToggle");
 let seccion1 = document.querySelector(".seccion1");
 
 // Evento Click
 
-btnLight.onclick = () => {
-  if (seccion1.classList.contains("sombra-darks") === true) {
-    seccion1.classList.remove("sombra-darks");
+btnYellow.onclick = () => {
+  if (seccion1.classList.contains("sombra-red") === true) {
+    seccion1.classList.remove("sombra-red");
   }
-  seccion1.classList.add("sombra-light");
+  seccion1.classList.add("sombra-yellow");
 };
 
-btnDarks.onclick = () => {
-  if (seccion1.classList.contains("sombra-light") === true) {
-    seccion1.classList.remove("sombra-light");
+btnRed.onclick = () => {
+  if (seccion1.classList.contains("sombra-yellow") === true) {
+    seccion1.classList.remove("sombra-yellow");
   }
-  seccion1.classList.add("sombra-darks");
+  seccion1.classList.add("sombra-red");
 };
 
 btnToggle.onclick = () => {
-  if (seccion1.classList.contains("sombra-light") === true) {
-    seccion1.classList.remove("sombra-light");
-    seccion1.classList.add("sombra-darks");
-  } else if (seccion1.classList.contains("sombra-darks") === true) {
-    seccion1.classList.remove("sombra-darks");
-    seccion1.classList.add("sombra-light");
+  if (seccion1.classList.contains("sombra-yellow") === true) {
+    seccion1.classList.remove("sombra-yellow");
+    seccion1.classList.add("sombra-red");
+  } else if (seccion1.classList.contains("sombra-red") === true) {
+    seccion1.classList.remove("sombra-red");
+    seccion1.classList.add("sombra-yellow");
   } else {
-    seccion1.classList.add("sombra-light");
+    seccion1.classList.add("sombra-yellow");
   }
 };
