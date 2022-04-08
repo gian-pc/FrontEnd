@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from "react";
 import Persona from "./Persona";
 
-const Personas = () => {
+const Personas = ({ setPersonaSeleccionada}) => {
   const [personas, setPersonas] = useState([]);
 
   const getPersonas = async () => {
+      console.log("FETCH");
     let response = await fetch("https://reqres.in/api/users");
     let json = await response.json();
 
-    setPersonas(json.data);
+    return json.data;
   };
 
   useEffect(() => {
-    getPersonas();
-  },[]);
+    getPersonas().then((arregloPersonas) => {
+      setPersonas(arregloPersonas);
+    });
+  }, []);
 
   return (
     <div className="col-md-8">
-      {personas.map((persona) => {
-        return <Persona />;
-      })}
+      <div className="row">
+        {personas.map((objPersona) => {
+          return (
+            <Persona
+              objPersona={objPersona}
+              key={objPersona.id}
+              setPersonaSeleccionada={setPersonaSeleccionada}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
