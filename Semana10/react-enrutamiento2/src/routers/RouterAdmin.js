@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import AdminHeader from "../modules/admin/components/AdminHeader";
 import AdminCategorias from "../modules/admin/screens/AdminCategorias";
 import AdminDashboard from "../modules/admin/screens/AdminDashboard";
 import AdminMesas from "../modules/admin/screens/AdminMesas";
@@ -8,6 +9,7 @@ import AdminPlatos from "../modules/admin/screens/AdminPlatos";
 const RouterAdmin = () => {
   return (
     <>
+      <AdminHeader/>
       <Routes>
         <Route path="dashboard" element={<AdminDashboard/>} />
         <Route path="categorias" element={<AdminCategorias />} />

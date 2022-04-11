@@ -6,7 +6,7 @@ import RouterGuest from "./RouterGuest";
 const RouterMain = () => {
   return (
     <BrowserRouter>
-      contenido statico
+      
       <Routes>
         <Route path="/auth/*" element={<RouterAuth />} />
         <Route path="/admin/*" element={<RouterAdmin />} />
