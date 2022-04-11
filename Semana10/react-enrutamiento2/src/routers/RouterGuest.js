@@ -1,9 +1,14 @@
-import React from 'react'
+import { Route, Routes } from "react-router-dom";
+import GuestLanding from "../modules/guest/screens/GuestLanding";
+import GuestNosotros from "../modules/guest/screens/GuestNosotros";
 
 const RouterGuest = () => {
   return (
-    <div>RouterGuest</div>
-  )
-}
+    <Routes>
+      <Route path="/" element={<GuestLanding />} />
+      <Route path="nosotros" element={<GuestNosotros/>} />
+    </Routes>
+  );
+};
 
-export default RouterGuest
+export default RouterGuest;

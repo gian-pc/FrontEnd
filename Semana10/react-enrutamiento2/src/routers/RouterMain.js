@@ -8,9 +8,9 @@ const RouterMain = () => {
     <BrowserRouter>
       contenido statico
       <Routes>
-        <Route path="/auth" element={<RouterAuth />} />
-        <Route path="/admin" element={<RouterAdmin />} />
-        <Route path="/" element={<RouterGuest />} />
+        <Route path="/auth/*" element={<RouterAuth />} />
+        <Route path="/admin/*" element={<RouterAdmin />} />
+        <Route path="/*" element={<RouterGuest />} />
       </Routes>
     </BrowserRouter>
   );
