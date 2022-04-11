@@ -9,17 +9,19 @@ import AdminPlatos from "../modules/admin/screens/AdminPlatos";
 const RouterAdmin = () => {
   return (
     <>
-      <AdminHeader/>
-      <Routes>
-        <Route path="dashboard" element={<AdminDashboard/>} />
-        <Route path="categorias" element={<AdminCategorias />} />
-        <Route path="mesas" element={<AdminMesas />} />
-        <Route path="pedidos" element={<AdminPedidos />} />
-        <Route path="platos" element={<AdminPlatos />} />
-        <Route path="*" element={<Navigate replace to="dashboard" />} />
-      </Routes>
+      <AdminHeader />
+      <main className="container">
+        <Routes>
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="categorias" element={<AdminCategorias />} />
+          <Route path="mesas" element={<AdminMesas />} />
+          <Route path="pedidos" element={<AdminPedidos />} />
+          <Route path="platos" element={<AdminPlatos />} />
+          <Route path="*" element={<Navigate replace to="dashboard" />} />
+        </Routes>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default RouterAdmin
+export default RouterAdmin;
