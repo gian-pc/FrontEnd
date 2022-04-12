@@ -64,7 +64,7 @@ const AdminHeader = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
+                <a className="nav-link disabled" href="!#">Disabled</a>
               </li>
             </ul>
             <form className="d-flex">
