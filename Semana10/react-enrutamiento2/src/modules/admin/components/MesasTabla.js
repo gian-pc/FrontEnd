@@ -1,18 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { MDBDataTable } from "mdbreact";
-import { getMesas } from "../../../services/mesas";
+import { deleteMesaById, getMesas } from "../../../services/mesas";
+import Swal from "sweetalert2";
 
 const MesasTabla = () => {
   const [mesas, setMesas] = useState([]);
 
-  useEffect(() => {
+  const obtenerMesas = () => {
     getMesas().then((rpta) => {
       setMesas(rpta);
     });
+  };
+
+  useEffect(() => {
+    obtenerMesas();
   }, []);
 
   const eliminarMesaById = (mesa_id) => {
-    console.log(`Eliminando ${mesa_id}`);
+    Swal.fire({
+      icon: "error",
+      text: "Los cambios son irreversibles",
+      title: "¿Seguro que desea eliminar el registro?",
+      showCancelButton: true,
+      confirmButtonText: "ELIMINAR",
+      confirmButtonColor: "#de0a0a",
+    }).then((rpta) => {
+      if (rpta.value) {
+        // sí, eliminar
+        deleteMesaById(mesa_id).then((rpta) => {
+          if (rpta.mesa_id) {
+            obtenerMesas();
+            Swal.fire({
+              icon: "success",
+              title: "Eliminado correctamente",
+              timer: 1500,
+              position: "top-end",
+              showConfirmButton: false,
+            });
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Hubieron errores en el servidor",
+            });
+          }
+        });
+      }
+    });
   };
 
   const editarMesaById = () => {};
@@ -44,8 +77,8 @@ const MesasTabla = () => {
           <>
             <button
               className="btn btn-danger"
-              onClick={()=>{
-                eliminarMesaById(objMesa.mesa_id)
+              onClick={() => {
+                eliminarMesaById(objMesa.mesa_id);
               }}
             >
               Eliminar
