@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { postMesa } from "../../../services/mesas";
+import { postMesa, putMesaById } from "../../../services/mesas";
 
-const MesasFormulario = ({ obtenerMesas, modo, mesa }) => {
+const MesasFormulario = ({ obtenerMesas, modo, mesa, setModo, setMesa }) => {
   const [form, setForm] = useState({
     mesa_nro: "",
     mesa_cap: 0,
@@ -23,21 +23,47 @@ const MesasFormulario = ({ obtenerMesas, modo, mesa }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //GIAN: Validando MesasFormulario
     if (form.mesa_cap > 0 && form.mesa_nro.trim() !== "") {
-      //el form está validado
-      postMesa(form).then((rpta) => {
-        if (rpta.mesa_id) {
-          obtenerMesas();
-          Swal.fire({
-            title: "Hecho!",
-            icon: "success",
-            text: "Registro creado exitosamente",
-            position: "top-end",
-            timer: 1500,
-            showConfirmButton: false,
-          });
-        }
-      });
+      if (modo === "crear") {
+        postMesa(form).then((rpta) => {
+          if (rpta.mesa_id) {
+            setForm({
+              mesa_nro: "",
+              mesa_cap: 0,
+            });
+            obtenerMesas();
+            Swal.fire({
+              title: "Hecho!",
+              icon: "success",
+              text: "Registro creado exitosamente",
+              position: "top-end",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+          }
+        });
+      } else {
+        //GIAN: EDITAR
+        putMesaById(form).then((rpta) => {
+          if (rpta.mesa_id) {
+            setForm({
+              mesa_nro: "",
+              mesa_cap: 0,
+            });
+            obtenerMesas();
+            setModo("crear");
+            setMesa({});
+            Swal.fire({
+              icon: "success",
+              title: "Registro correctamente actualizado",
+              timer: 1500,
+              position: "top-end",
+              showConfirmButton: false,
+            });
+          }
+        });
+      }
     }
   };
 
@@ -71,7 +97,7 @@ const MesasFormulario = ({ obtenerMesas, modo, mesa }) => {
               </div>
               <div className="form-group text-center mt-4">
                 <button className="btn btn-primary " type="submit">
-                  {modo === "crear" ? <>Crear</> : <>Editar</>}
+                  {modo === "crear" ? <>Crear</> : <>Guardar Cambios</>}
                 </button>
                 <button className="btn btn-secondary ms-3" type="button">
                   Cancelar

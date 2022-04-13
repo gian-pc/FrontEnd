@@ -1,4 +1,3 @@
-import React from "react";
 import { MDBDataTable } from "mdbreact";
 import { deleteMesaById } from "../../../services/mesas";
 import Swal from "sweetalert2";
@@ -15,7 +14,7 @@ const MesasTabla = ({ mesas, loading, obtenerMesas, setMesa, setModo }) => {
       confirmButtonColor: "#de0a0a",
     }).then((rpta) => {
       if (rpta.value) {
-        // sí, eliminar
+        //GIAN: Sí Eliminar
         deleteMesaById(mesa_id).then((rpta) => {
           if (rpta.mesa_id) {
             obtenerMesas();
@@ -42,6 +41,7 @@ const MesasTabla = ({ mesas, loading, obtenerMesas, setMesa, setModo }) => {
     setMesa(objMesa);
   };
 
+  //GIAN: Pintando las mesas
   const data = {
     columns: [
       {
